@@ -1,0 +1,26 @@
+package cyl;
+
+public class Cyc {
+
+	public static void main(String[] args) {
+		say();
+	}
+	
+	public static void show(){
+		 for (int f = 0; f < 10; f++){  
+			System.out.println(f);
+		 } 
+	}
+	public static int say(){
+		try{
+			show();
+			return 0 ;
+		}catch(Exception e){
+			System.out.println("Òì³£");
+		}finally{
+			System.out.println("Êä³ö");
+		}
+		return 0;	
+	}
+
+}

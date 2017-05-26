@@ -1,0 +1,22 @@
+package com.dub;
+
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+public class Client2 { 
+	public static void main(String[] args){
+		Socket t = null;
+		try {
+			System.out.println("正在连接服务器");
+			t = new Socket("192.168.199.231",9905); 
+			//发
+			new Thread(new OutRunnable(t)).start();
+			//收
+			new Thread(new InRunnable(t)).start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+

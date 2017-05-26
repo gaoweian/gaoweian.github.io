@@ -1,0 +1,18 @@
+package com.dazhi;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		SimpleDateFormat s = new SimpleDateFormat();
+		System.out.println(s.format(new Date()));
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.fanshe;
+
+import java.io.Serializable;
+
+public class Main3 implements Serializable{
+
+	public static void main(String[] args) {
+		try {
+			Class<?> cla = Class.forName("com.fanshe.Main3");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

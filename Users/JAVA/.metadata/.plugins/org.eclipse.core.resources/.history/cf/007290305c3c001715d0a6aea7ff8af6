@@ -1,0 +1,18 @@
+package com.fanshe;
+
+import java.io.Serializable;
+
+public class Main3 implements Serializable{
+	private static final long ID = 12312313;
+	public static void main(String[] args) {
+		try {
+			Class<?> cla = Class.forName("com.fanshe.Main3");
+			System.out.println("--------本类属性----------");
+			//取得本类的全部属性
+			Field[] field = 
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

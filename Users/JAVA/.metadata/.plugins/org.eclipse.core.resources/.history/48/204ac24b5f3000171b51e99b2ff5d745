@@ -1,0 +1,27 @@
+package com.dub;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class InRunnable implements Runnable{
+	Socket t =null;
+	public InRunnable(Socket t){
+		this.t = t;
+	}
+	public void run() {
+		try {
+			while(true){
+				System.out.println("接收服务器返回信息");
+				BufferedReader bf = new BufferedReader(new InputStreamReader(t.getInputStream()));
+				String ss;
+				ss = bf.readLine();
+				System.out.println("服务器:" + ss); 
+				bf.close();
+			}
+		} catch (IOException e) {
+				e.printStackTrace();
+		}
+	}
+}

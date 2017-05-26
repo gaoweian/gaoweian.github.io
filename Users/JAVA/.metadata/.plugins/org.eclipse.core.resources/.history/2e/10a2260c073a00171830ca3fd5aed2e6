@@ -1,0 +1,50 @@
+package com.GUI2;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class Main extends JFrame{
+	public Main(){
+		this.setLayout(null);
+		this.setTitle("五子棋 ");
+		
+		TestPaint test = new TestPaint();
+		test.setBounds(20,10,660,660);
+		this.add(test);
+		
+		JButton jButton = new JButton();
+		jButton.setText("重新开始");
+		jButton.setBounds(670,50,90,30);
+		jButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				test.kk=true;
+				test.isWinNow=false;
+				test.qzlist.clear();
+				test.repaint();
+			}
+		});
+		this.add(jButton);
+		
+		JButton jButton3 = new JButton();
+		jButton3.setText("退出");
+		jButton3.setBounds(670,100,90,30);
+		jButton3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		this.add(jButton3);
+		
+		this.setBounds(300,20,800,700);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setVisible(true);
+	}
+	public static void main(String[] args) {
+		new Main();
+	}
+}

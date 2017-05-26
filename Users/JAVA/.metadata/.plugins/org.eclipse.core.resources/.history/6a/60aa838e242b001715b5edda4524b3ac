@@ -1,0 +1,18 @@
+package com.efg;
+import java.util.Scanner;
+public class Demo {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("输入用户名：");
+		String name = sc.next();
+		System.out.println("输入密码：");
+		int password = sc.nextInt();
+		ZhangHu zhanghu = new ZhangHu(name,password);
+		QuqianThread ka = new QuqianThread(zhanghu, 3000);
+		QuqianThread zhe = new QuqianThread(zhanghu, 2000);	
+		new Thread(ka).start();
+		new Thread(zhe).start();
+	}
+
+}

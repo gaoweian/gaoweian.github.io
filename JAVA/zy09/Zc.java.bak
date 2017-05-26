@@ -1,0 +1,6 @@
+abstract class Zc{
+	public static void main(String[] args){
+		abstract public void l();
+	}
+	
+}

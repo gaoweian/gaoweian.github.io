@@ -1,0 +1,34 @@
+import java.util.*;
+public class MapDemo{
+	 public static void main(String[] args){
+		 //创建对象
+		Map<String,String>  hm = new  HashMap<String,String>();
+		//Map<String,String>  hm = new  LinkedHashMap<String,String>();
+		//添加元素
+		hm.put("1","a");
+		hm.put("2","b");
+		hm.put("6","Eric");
+		hm.put("3","d");
+		hm.put("7","Eric");
+		//返回hm中的元素个数
+		//System.out.println("hm中的元素个数:"+hm.size());
+		//hm.remove("1");//删除指定数据
+		//hm.clear();//清空所有元素
+		//hm.get("7");//根据键返回值
+		//System.out.println(hm.entrySet());//遍历
+		//System.out.println(hm);//查询输出
+		
+		Set keys = hm.keySet();//得到所有的key，并保存在一个Set中
+		//遍历
+		Iterator  i  =  keys.iterator();
+		while(i.hasNext()){
+			String key = (String)i.next(); 
+			String value = (String)hm.get(key);
+			System.out.println(key+"------"+value);//自动排序
+		}
+	 }
+}
+
+
+
+

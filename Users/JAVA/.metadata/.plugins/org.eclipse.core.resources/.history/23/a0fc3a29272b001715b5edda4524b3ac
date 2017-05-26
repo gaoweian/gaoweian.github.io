@@ -1,0 +1,32 @@
+package com.efg;
+import java.util.Scanner;
+public class Demo {
+	static Scanner sc = new Scanner(System.in);
+	static String name;
+	static int money;
+	public static void main(String[] args) {
+		welcome();
+	}
+	public static void welcome(){
+		System.out.println("------存取款-------");
+		System.out.println("------1.存款------");
+		System.out.println("------2.取款------");
+		System.out.println("------3.退出------");
+		int p = sc.nextInt();
+		switch(p){
+			case 1:
+				System.out.println("输入用户名：");
+				name = sc.next();
+				System.out.println("输入余额：");
+				money = sc.nextInt();
+				break;
+			case 2:	
+				ZhangHu zhanghu = new ZhangHu(name,money);
+				QuqianThread ka = new QuqianThread(zhanghu, 3000);
+				QuqianThread zhe = new QuqianThread(zhanghu, 2000);	
+				new Thread(ka).start();
+				new Thread(zhe).start();
+		}
+	}
+	
+}
