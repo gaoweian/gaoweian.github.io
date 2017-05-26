@@ -1,0 +1,84 @@
+package com.GUI;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+public class Main2 extends JFrame{
+	public Main2(){
+		
+		this.setLayout(new FlowLayout());
+		
+		File file = new File("F:/Test.txt");
+//		if(!file.exists()){
+//			try {	
+//				file.createNewFile();
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+		//文本框
+		
+		JTextArea jTextArea = new JTextArea();//定义控件
+		jTextArea.setText("请输入");
+		jTextArea.setBounds(30, 80, 100, 20);//设置控件的位置
+		this.add(jTextArea);//将其放到窗口中
+		
+		// 菜单栏
+		JMenuBar jMenuBar = new JMenuBar();
+		JMenu jMenu = new JMenu("文件");
+
+		JMenuItem open = new JMenuItem("新建");
+		JMenuItem save = new JMenuItem("保存");
+
+		jMenu.add(open);
+		// 设置菜单分隔符
+		jMenu.addSeparator();
+		jMenu.add(save);
+		jMenuBar.add(jMenu);
+		// 设置菜单栏，使用这种方式设置菜单栏可以不占用布局空间
+		this.setJMenuBar(jMenuBar);
+		
+		JMenu jMenu2 = new JMenu("编辑");
+
+		JMenuItem c = new JMenuItem("复制");
+		JMenuItem v = new JMenuItem("粘贴");
+		
+		jMenu2.add(c);
+		// 设置菜单分隔符
+		//jMenu2.addSeparator();
+		jMenu2.add(v);
+		jMenuBar.add(jMenu2);
+		// 设置菜单栏，使用这种方式设置菜单栏可以不占用布局空间
+		this.setJMenuBar(jMenuBar);
+
+		
+		this.setBounds(300,200,300,200);//定义窗口大小
+		this.setVisible(true);//定义窗口是否可见
+		
+		save.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InputStream in=null;
+				try {
+					in = new FileInputStream(file);
+					byte[] bytes = new byte[1024];
+					int len = 0;
+					StringBuffer sb = new StringBuffer();
+					while((len = in.read(bytes))!=-1){
+						sb.append(new String(bytes,0,len));
+					}
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+	}
+	public static void main(String[] args) {
+		new Main2();
+		
+		
+		
+	}
+}
+

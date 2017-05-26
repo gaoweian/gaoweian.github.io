@@ -1,0 +1,13 @@
+public class Sj extends Zc{
+	double a = 3;
+	double b = 4;
+	double c = 5;
+	/*public Sj(double a,double b,double c){
+		this.a=a;
+		this.b=b;
+		this.c=c;	
+	}*/
+	public void l(){
+		System.out.println("三角形的周长是:"+(a+b+c));
+	}
+}

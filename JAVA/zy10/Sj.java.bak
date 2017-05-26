@@ -1,0 +1,30 @@
+public class Sj{
+	public static void main(String[] args){	
+		ItPhone p = Factory.getsj("htc");
+		p.call();
+	}
+}
+interface Itphone{
+	void call();
+}
+class HTC implements Itphone{
+	public void call(){
+		System.out.println("用HTC打电话");
+	}
+}
+class MI implements Itphone{
+	public void call(){
+		System.out.println("用MI打电话");
+	}
+}
+class Factory{
+	public static Itphone getsj(String type){
+		Itphone p = null;
+		if("htc".equals(type)){
+			p = new HTC();
+		}else if("mi".equals(type)){
+			p = new MI();
+		}
+		return p;
+	} 
+}

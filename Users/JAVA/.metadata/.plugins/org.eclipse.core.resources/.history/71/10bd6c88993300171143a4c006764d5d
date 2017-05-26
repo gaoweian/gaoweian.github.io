@@ -1,0 +1,36 @@
+package com.GUI;
+
+import java.awt.Color;
+
+import javax.swing.*;
+
+
+public class Main extends JFrame{
+	
+	public Main(){
+		this.setLayout(null);
+		JLabel jLabel = new JLabel();
+		jLabel.setText("11111111");//要实现的内容
+		jLabel.setFont(new java.awt.Font("Dialog",1,15));
+		jLabel.setBackground(Color.blue);
+		jLabel.setBounds(30,30,100,20);//设置控件的位置
+		this.add(jLabel);//将其放到窗口中
+		
+		JButton jButton = new JButton();//定义控件
+		jButton.setText("按钮");//设置实现
+		jButton.setBounds(30, 50, 100, 20);//设置控件的位置
+		this.add(jButton);//将其放到窗口中
+		
+		JTextArea jTextArea = new JTextArea();//定义控件
+		jTextArea.setText("请输入");
+		jTextArea.setBounds(30, 80, 100, 20);//设置控件的位置
+		this.add(jTextArea);//将其放到窗口中
+		
+		this.setBounds(300,300,300,300);//定义窗口大小
+		this.setVisible(true);//定义窗口是否可见
+	}
+	public static void main(String[] args) {
+		new Main();
+	}
+
+}

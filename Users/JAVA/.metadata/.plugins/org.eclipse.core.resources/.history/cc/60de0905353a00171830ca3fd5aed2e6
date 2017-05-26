@@ -1,0 +1,22 @@
+package com.GUI2;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class FwqdDemo {
+
+	public static void main(String[] args) {
+		ServerSocket ss = null;
+		Socket s = null;
+		try {
+			System.out.println("创建服务器");
+			ss = new ServerSocket(9999);
+			System.out.println("等待连接");
+			s = ss.accept();
+			System.out.println("连接成功");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

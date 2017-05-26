@@ -1,0 +1,31 @@
+package com.fanshe;
+
+import java.io.Serializable;
+
+public class Main implements Serializable{
+	private static final long ID = 12312313;
+	public static void main(String[] args){
+		Main m = new Main();
+		System.out.println(m.getClass().getName());//com.fanshe.Main
+		
+		try {
+			Class<?> c1 = null;
+			Class<?> c2 = null;
+			Class<?> c3 = null;
+			c1 = Class.forName("com.fanshe.Main");
+			c2 = new Main().getClass();
+			c3 = Main.class;
+			System.out.println("类名称"+c1.getName());//类名称com.fanshe.Main
+			System.out.println("类名称"+c2.getName());//类名称com.fanshe.Main
+			System.out.println("类名称"+c3.getName());//类名称com.fanshe.Main
+			
+	
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+		
+}

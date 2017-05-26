@@ -1,0 +1,55 @@
+package com.GUI;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+
+public class Main extends JFrame{
+	
+	public Main(){
+		this.setLayout(new FlowLayout());
+		JLabel jLabel = new JLabel();
+		jLabel.setText("11111111");//要实现的内容
+		jLabel.setOpaque(true);
+		jLabel.setBounds(30,30,100,20);//设置控件的位置
+		this.add(jLabel);//将其放到窗口中
+		
+		JButton jButton = new JButton();//定义控件
+		jButton.setText("按钮");//设置实现
+		
+		jButton.setBounds(30, 50, 100, 20);//设置控件的位置
+		this.add(jButton);//将其放到窗口中
+		
+		JTextArea jTextArea = new JTextArea();//定义控件
+		jTextArea.setText("请输入");
+		jTextArea.setBounds(30, 80, 100, 20);//设置控件的位置
+		this.add(jTextArea);//将其放到窗口中
+		
+		JMenuBar jMenuBar = new JMenuBar();
+		JMenu jMenu = new JMenu();
+		jMenu.setText("文件");
+		JMenuItem jMenuItem = new JMenuItem();
+		jMenuItem.setText("新建");
+		
+		jMenu.add(jMenuItem);
+		jMenuItem.add(jMenuBar);
+		
+		
+		this.setBounds(500,300,500,300);//定义窗口大小
+		this.setVisible(true);//定义窗口是否可见
+		
+		jButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jButton.getText();
+			}
+		});
+	}
+	public static void main(String[] args) {
+		new Main();
+	}
+
+}

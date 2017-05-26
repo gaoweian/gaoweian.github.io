@@ -1,0 +1,26 @@
+package cyl;
+
+public class Cyc {
+	static int [] a = new int[]{1,3,2,5,4,6,8,7,9};
+	public static void main(String[] args){
+		say();
+	}
+	
+	public static void show(){
+		 for (int f = 0; f < 10; f++){  
+			System.out.println(a[f]);
+		 } 
+	}
+	public static int say(){
+		try{
+			show();
+			return 0 ;
+		}catch(Exception e){
+			System.out.println("Òì³£");
+		}finally{
+			System.out.println("Êä³ö");
+		}
+		return 0;	
+	}
+
+}

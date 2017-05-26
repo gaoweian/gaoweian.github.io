@@ -1,0 +1,30 @@
+package com.GUI;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+public class Main3 extends JFrame{
+	public Main3(){
+		this.setLayout(null);
+		JButton jButton = new JButton();//定义控件
+		jButton.setText("按钮");//设置实现
+		
+		jButton.setBounds(30, 50, 100, 20);//设置控件的位置
+		this.add(jButton);//将其放到窗口中
+		
+		this.setBounds(500,300,500,300);//定义窗口大小
+		this.setVisible(true);//定义窗口是否可见
+		
+		jButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("111");
+			}
+		});
+	}
+	public static void main(String[] args) {
+		new Main3();
+	}
+
+}

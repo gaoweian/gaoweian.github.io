@@ -1,0 +1,32 @@
+package com.dazhi;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Main {
+
+	public static void main(String[] args) {
+		try {
+			ServerSocket s = new ServerSocket(8277);
+			System.out.println("创建服务器端");
+			Socket t = s.accept();
+			System.out.println("监听");
+			InputStream i =  t.getInputStream();	
+			byte[] b = new byte[1024];
+			int len = 0;
+			StringBuffer sb = new StringBuffer();
+			while((len = i.read(b))!=-1){
+				sb.append(new String(b,0,len));
+			}
+			System.out.println("服务器:你是");
+			System.out.println("客户端:"+sb.toString());
+			String cc = t.getLocalAddress().getHostAddress();
+			System.out.println("地址是："+cc);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}
